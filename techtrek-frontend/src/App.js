@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
-
+import { DataTable } from './views/transactions/Transactions';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { useAuthContext } from './hooks/useAuthContext';
 
@@ -31,10 +31,10 @@ function App() {
               path='/account'
               element={<BankAccount />} 
             />
-            {/* <Route 
-              path='/transaction' 
-              element={<Transaction />} 
-            /> */}
+            <Route 
+              path='/transactions' 
+              element={<DataTable />} 
+            />
             {/* <Route 
               path='/profile' 
               element={<Profile />} 
