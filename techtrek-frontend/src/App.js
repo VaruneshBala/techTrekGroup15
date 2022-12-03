@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
 import { DataTable } from './views/transactions/Transactions';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
