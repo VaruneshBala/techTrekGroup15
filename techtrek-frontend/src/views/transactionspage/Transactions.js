@@ -8,7 +8,7 @@ import axios from 'axios';
   const [arr, setArr] = React.useState([]);
 
   useEffect(()=>{
-    axios.get('https://flask-production-7a20.up.railway.app/transactions/621156213')
+    axios.get(`https://flask-production-7a20.up.railway.app/transactions/${sessionStorage.getItem("userid")}`)
     .then(
       (res) => {
         const arrayCop = [...res.data.data.transaction_lists]
@@ -18,9 +18,13 @@ import axios from 'axios';
 
   }, [])
 
-  const remove = (TransactionID) => {
+  const remove = (AccountID, TransactionID) => {
     const arrayCopy = arr.filter((row) => row.TransactionID !== TransactionID);
     setArr(arrayCopy)
+    axios.delete('https://flask-production-7a20.up.railway.app/transactions/delete', {
+      "AccountID": AccountID,
+          "TransactionID": TransactionID
+  })
   };
 
 const table_result = arr.map((item)=> {
@@ -32,7 +36,7 @@ const table_result = arr.map((item)=> {
     <td>{item.Date}</td>
     <td>{item.TransactionAmount}</td>
     <td>{item.Comment}</td>
-    <td onClick={() => remove(item.TransactionID)}><TbTrash /></td>
+    <td onClick={() => remove(item.AccountID, item.TransactionID)}><TbTrash /></td>
 </tr>
   )
 })
