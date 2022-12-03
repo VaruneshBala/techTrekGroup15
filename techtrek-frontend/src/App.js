@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useAuthContext } from './hooks/useAuthContext';
+// import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+// import { useAuthContext } from './hooks/useAuthContext';
 
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
