@@ -1,0 +1,63 @@
+.Bank-Account{
+    justify-content: center;
+    display: block;
+}
+
+.Accounts-Container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    
+}  
+
+.Accounts{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 10px;
+    background-color: rgb(241, 241, 241);
+    border: rgb(196, 49, 64);
+    border-style: solid;
+    border-radius: 10px;
+    
+}
+
+.Account-Contrainer-Flex{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 10px
+}
+
+.Account-Container{
+    display: block;
+    margin-top: 10px;
+    width: 95%;
+    background:white;
+    border-radius: 10px;
+
+
+}
+
+.AccountHeader{
+    display: flex;
+    margin: 10px 20px;
+}
+
+.AccountBalance{
+    display: flex;
+    margin: 10px 20px;
+}
+
+.View-Button{
+    margin-left: auto;
+    color: grey;
+    padding-right: 20px;
+}
+
+.View-Button:hover{
+    color: rgb(224, 223, 223);
+}
+
