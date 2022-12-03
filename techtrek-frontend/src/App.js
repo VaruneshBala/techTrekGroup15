@@ -3,6 +3,7 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
 import JsonDataDisplay, { DataTable } from './views/transactionspage/Transactions';
+import BasicExample from './views/newtransaction/newtransaction';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { useAuthContext } from './hooks/useAuthContext';
 
@@ -34,6 +35,10 @@ function App() {
             <Route 
               path='/transactions' 
               element={<JsonDataDisplay />} 
+            />
+            <Route 
+              path='/newtransaction' 
+              element={<BasicExample />} 
             />
             {/* <Route 
               path='/profile' 

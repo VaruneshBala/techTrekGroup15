@@ -8,7 +8,7 @@ import axios from 'axios';
   const [arr, setArr] = React.useState([]);
 
   useEffect(()=>{
-    axios.get(`https://flask-production-7a20.up.railway.app/transactions/${sessionStorage.getItem("userid")}`)
+    axios.get(`https://flask-production-7a20.up.railway.app/transactions/${sessionStorage.getItem("accountid")}`)
     .then(
       (res) => {
         const arrayCop = [...res.data.data.transaction_lists]
@@ -21,9 +21,8 @@ import axios from 'axios';
   const remove = (AccountID, TransactionID) => {
     const arrayCopy = arr.filter((row) => row.TransactionID !== TransactionID);
     setArr(arrayCopy)
-    axios.delete('https://flask-production-7a20.up.railway.app/transactions/delete', {
-      "AccountID": AccountID,
-          "TransactionID": TransactionID
+    axios.delete('https://flask-production-7a20.up.railway.app/transactions/delete', {'data':{"AccountID": AccountID,
+    "TransactionID": TransactionID}
   })
   };
 
