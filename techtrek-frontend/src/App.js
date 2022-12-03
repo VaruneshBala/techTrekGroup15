@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useAuthContext } from './hooks/useAuthContext';
+import NavBar from './components/NavBar';
+import { BankAccount } from './views/bank-accounts/BankAccount';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import { useAuthContext } from './hooks/useAuthContext';
 
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
@@ -14,18 +16,32 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route
+              path='/'
+              element={<NavBar />} 
+            />
+            {/* <Route
+              path='/login'
+              element={<Login />} 
+            /> */}
+            <Route
+              path='/account'
+              element={<BankAccount />} 
+            />
+            {/* <Route 
+              path='/transaction' 
+              element={<Transaction />} 
+            /> */}
+            {/* <Route 
+              path='/profile' 
+              element={<Profile />} 
+            /> */}
+          </Routes>
+        </div>
+    </Router>
       </header>
     </div>
   );
