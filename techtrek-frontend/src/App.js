@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
+import NavBar from './components/navbar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
-import { DataTable } from './views/transactions/Transactions';
 // import { DataTable } from './views/transactions/transactions';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { useAuthContext } from './hooks/useAuthContext';
@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
 // import Login from './view/login/Login'
-// import Profile from './view/profile/Profile'
+import Profile from './views/profile/profile'
 // import Transactions from './view/transactions/Transactions'
 
 function App() {
@@ -27,18 +27,18 @@ function App() {
               path='/login'
               element={<Login />} 
             /> */}
-            <Route
+            {/* <Route
               path='/account'
               element={<BankAccount />} 
-            />
-            <Route 
+            /> */}
+            {/* <Route 
               path='/transactions' 
               element={<DataTable />} 
-            />
-            {/* <Route 
+            /> */}
+            <Route 
               path='/profile' 
               element={<Profile />} 
-            /> */}
+            />
           </Routes>
         </div>
     </Router>
