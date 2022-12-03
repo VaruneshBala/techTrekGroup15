@@ -59,7 +59,7 @@ const ProfilePage = () => {
   //   },
   // ];
 
-  const userId = 1;
+  const userId = sessionStorage.getItem("userid");
 
   const [userProfile, setUserProfile] = useState([]);
 
