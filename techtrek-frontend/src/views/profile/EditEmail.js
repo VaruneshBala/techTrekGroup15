@@ -24,12 +24,12 @@ const EditEmail = () => {
     <div className="edit-email">
       <form onSubmit={submitHandler}>
         <div>
-          <label htmlFor="new-email">New Email: </label>
-          <input id="new-email" value={newEmail} onChange={emailChangeHandler}/>
-          <button type="submit">Change</button>
+          <label htmlFor="new-email">New Email:</label>
+          <input className="input" id="new-email" value={newEmail} onChange={emailChangeHandler}/>
+          <button className="edit-button" type="submit">Change</button>
         </div>
       </form>
-      <button onClick={removeEmailHandler}>Remove email?</button>
+      <button className="remove-button" onClick={removeEmailHandler}>Remove email</button>
     </div>
   );
 };

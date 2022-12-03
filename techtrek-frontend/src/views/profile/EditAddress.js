@@ -25,11 +25,11 @@ const EditAddress = () => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="new-address">New Address: </label>
-          <input id="new-address" value={newAddress} onChange={addressChangeHandler}/>
-          <button type="submit">Change</button>
+          <input className="input" id="new-address" value={newAddress} onChange={addressChangeHandler}/>
+          <button className="edit-button" type="submit">Change</button>
         </div>
       </form>
-      <button onClick={removeAddressHandler}>Remove address?</button>
+      <button className="remove-button" onClick={removeAddressHandler}>Remove address</button>
     </div>
   );
 };
