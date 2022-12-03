@@ -97,74 +97,74 @@ function Login() {
       });
   };
   return (
-    <div style={{alignContent: "center"}}>
-    <Card className={classes.loginForm}>
-      <img src={DBSLogo} width="100px" style={{ margin: "auto" }} />
-      <h3 className={classes.title}>Log In</h3>
-      <TextField
-        required
-        label="Username"
-        id="Username"
-        alt="Username"
-        className={classes.username}
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <TextField
-        required
-        label="Password"
-        id="Password"
-        alt="Password"
-        className={classes.password}
-        type={displayPassword ? "text" : "password"}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              >
-                {displayPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
-      <Button
-        className={classes.button}
-        variant="contained"
-        color="primary"
-        size="medium"
-        disabled={!password.length > 0 || !username.length > 0}
-        onClick={submit}
-      >
-        Login
-      </Button>
-      <Link className={classes.link} href="/signup">
-        Create an account
-      </Link>
-      {error && (
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => {
-            setOpen(false);
+    <div style={{ display: "flex", justifyContent: "center", }}>
+      <Card className={classes.loginForm}>
+        <img src={DBSLogo} width="100px" style={{ margin: "auto" }} />
+        <h3 className={classes.title}>Log In</h3>
+        <TextField
+          required
+          label="Username"
+          id="Username"
+          alt="Username"
+          className={classes.username}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextField
+          required
+          label="Password"
+          id="Password"
+          alt="Password"
+          className={classes.password}
+          type={displayPassword ? "text" : "password"}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {displayPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            ),
           }}
+        />
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="primary"
+          size="medium"
+          disabled={!password.length > 0 || !username.length > 0}
+          onClick={submit}
         >
-          <Alert
+          Login
+        </Button>
+        <Link className={classes.link} href="/signup">
+          Create an account
+        </Link>
+        {error && (
+          <Snackbar
+            open={open}
+            autoHideDuration={6000}
             onClose={() => {
               setOpen(false);
             }}
-            severity="error"
           >
-            Unable to authenticate
-          </Alert>
-        </Snackbar>
-      )}
-    </Card>
+            <Alert
+              onClose={() => {
+                setOpen(false);
+              }}
+              severity="error"
+            >
+              Unable to authenticate
+            </Alert>
+          </Snackbar>
+        )}
+      </Card>
     </div>
   );
 }

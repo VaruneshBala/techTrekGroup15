@@ -71,7 +71,8 @@ function Signup() {
     //   });
   };
   return (
-    <div className={classes.loginForm}>
+    <div style={{ display: "flex", justifyContent: "center", }}>
+    <Card className={classes.loginForm}>
       <img src={DBSLogo} width="100px" style={{ margin: "auto" }} />
       <h3 className={classes.title}>Sign Up</h3>
       <TextField
@@ -117,9 +118,10 @@ function Signup() {
       >
         Sign Up
       </Button>
-      <Link className={classes.link} href="/login">
+      <Link className={classes.link} href="/">
         Login to an existing account
       </Link>
+    </Card>
     </div>
   );
 }
