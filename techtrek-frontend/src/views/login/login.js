@@ -78,7 +78,7 @@ function Login() {
       .then((response) => {
         console.log(response);
         if (response.data.token) {
-          sessionStorage.setItem("userid", username);
+          sessionStorage.setItem("userid", response.data.UserID);
           sessionStorage.setItem("jwtToken", response.data.token);
           dispatch(
             userLogin({
@@ -97,6 +97,7 @@ function Login() {
       });
   };
   return (
+    <div style={{alignContent: "center"}}>
     <Card className={classes.loginForm}>
       <img src={DBSLogo} width="100px" style={{ margin: "auto" }} />
       <h3 className={classes.title}>Log In</h3>
@@ -164,6 +165,7 @@ function Login() {
         </Snackbar>
       )}
     </Card>
+    </div>
   );
 }
 
