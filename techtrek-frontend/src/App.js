@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
-import { DataTable } from './views/transactions/Transactions';
+import JsonDataDisplay, { DataTable } from './views/transactionspage/Transactions';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // import { useAuthContext } from './hooks/useAuthContext';
 
@@ -33,7 +33,7 @@ function App() {
             />
             <Route 
               path='/transactions' 
-              element={<DataTable />} 
+              element={<JsonDataDisplay />} 
             />
             {/* <Route 
               path='/profile' 
