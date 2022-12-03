@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
+// import Login from './view/login/Login'
+import Profile from './views/profile/profile'
 import Login from "./views/login/login";
 import Signup from "./views/signup/signup";
 // import Profile from './view/profile/Profile'
@@ -17,20 +19,36 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Router>
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Login />} />
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route
+              path='/'
+              element={<NavBar />} 
+            />
+            <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/account" element={<BankAccount />} />
               <Route path="/transactions" element={<DataTable />} />
-              {/* <Route 
+            {/* <Route
+              path='/login'
+              element={<Login />} 
+            /> */}
+            {/* <Route
+              path='/account'
+              element={<BankAccount />} 
+            /> */}
+            {/* <Route 
+              path='/transactions' 
+              element={<DataTable />} 
+            /> */}
+            <Route 
               path='/profile' 
               element={<Profile />} 
-            /> */}
-            </Routes>
-          </div>
-        </Router>
+            />
+          </Routes>
+        </div>
+    </Router>
       </header>
     </div>
   );

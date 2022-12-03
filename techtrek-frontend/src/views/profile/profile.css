@@ -1,0 +1,66 @@
+.profile {
+  background-color: rgb(216, 234, 255);
+  margin: auto;
+  margin-top: 10vh;
+  width: 100vh;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.name {
+  margin: 10px auto;
+}
+
+.email {
+  margin: 10px auto;
+}
+
+.edit-email {
+  margin: 10px auto;
+}
+
+.address {
+  margin: 10px auto;
+}
+
+.edit-address {
+  margin: 10px auto;
+}
+
+.opt-in {
+  margin: 10px auto;
+}
+
+.edit-button {
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(56, 56, 56);
+  color: white;
+  font-weight: 500;
+}
+
+.edit-button:active {
+  background-color: rgb(83, 83, 83);
+}
+
+.remove-button {
+  cursor: pointer;
+  margin: 5px auto 10px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(255, 213, 213);
+}
+
+.remove-button:active {
+  background-color: rgb(239, 201, 201);
+}
+
+.input {
+  margin: auto 5px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+}
