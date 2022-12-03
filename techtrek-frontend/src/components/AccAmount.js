@@ -1,10 +1,13 @@
 import React from 'react'
-import { FaEye } from 'react-icons/fa';
+
 
 export const AccAmount = ({AccountBalance, SetToggle}) => {
   return (
-    <div className="AccountBalance">
-        Current Balance: {AccountBalance}
+    <div>
+        <h4 className="AccountBalance">
+            Current Balance: {AccountBalance}
+        </h4>
+        <a href='/transaction' className="trans_btn">Transfer Money</a>
     </div>
   )
 }
