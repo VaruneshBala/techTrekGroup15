@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar';
 import axios from 'axios';
 
 export const BankAccount = () => {
-    const UserID = 4;
+    const UserID = sessionStorage.getItem("userid");
     const [accountData,setAccountData] = useState([])
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState('')    
