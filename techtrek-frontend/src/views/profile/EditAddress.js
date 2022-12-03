@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./profile.css"
+import axios from "axios";
 
-const EditAddress = () => {
+const EditAddress = ({ userId, userProfile, setUserProfile }) => {
   const [newAddress, setNewAddress] = useState("")
 
   const addressChangeHandler = (e) => {
@@ -9,15 +10,41 @@ const EditAddress = () => {
   }
 
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    console.log(newAddress)
+    const newnewuserprofile = { ...userProfile, Address: newAddress }
+    axios
+    .put(
+      `https://flask-production-7a20.up.railway.app/user/${userId}`,
+      newnewuserprofile
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+      
+      setUserProfile(newnewuserprofile);
 
     setNewAddress("")
   }
 
   const removeAddressHandler = () => {
-
+    const newnewuserprofile = { ...userProfile, Address: "" }
+    axios
+    .put(
+      `https://flask-production-7a20.up.railway.app/user/${userId}`,
+      newnewuserprofile
+      )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+      
+      setUserProfile(newnewuserprofile);
   }
 
   return (

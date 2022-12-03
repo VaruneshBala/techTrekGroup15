@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navbar";
 import EditAddress from "./EditAddress";
 import EditEmail from "./EditEmail";
-import axios from 'axios'
+import axios from "axios";
 import "./profile.css";
 
 const ProfilePage = () => {
@@ -59,20 +59,20 @@ const ProfilePage = () => {
   //   },
   // ];
 
+  const userId = 1;
+
   const [userProfile, setUserProfile] = useState([]);
 
   useEffect(() => {
-    const data = axios
-      .get(
-        `https://flask-production-7a20.up.railway.app/user/1`
-      )
-      .then((response) => console.log(response.data))
+    axios
+      .get(`https://flask-production-7a20.up.railway.app/user/${userId}`)
+      .then((response) => {
+        console.log(response.data.data);
+        setUserProfile(response.data.data);
+      })
       .catch((error) => {
         console.error("There was an error!", error);
       });
-
-    setUserProfile(data);
-    console.log(data)
   }, []);
 
   const [emailIsOpen, setEmailIsOpen] = useState(false);
@@ -97,12 +97,12 @@ const ProfilePage = () => {
         <button className="edit-button" onClick={editEmailOpenHandler}>
           Edit
         </button>
-        {emailIsOpen && <EditEmail />}
+        {emailIsOpen && <EditEmail userId={userId} userProfile={userProfile} setUserProfile={setUserProfile}/>}
         <div className="address">Home Address: {userProfile.Address}</div>
         <button className="edit-button" onClick={editAddressOpenHandler}>
           Edit
         </button>
-        {addressIsOpen && <EditAddress />}
+        {addressIsOpen && <EditAddress userId={userId} userProfile={userProfile} setUserProfile={setUserProfile}/>}
         <div className="opt-in">
           Opt into physical statements? -
           {userProfile.OptIntoPhyStatements === 1 ? "Yes" : "No"}
