@@ -61,3 +61,31 @@
     color: rgb(224, 223, 223);
 }
 
+.trans_btn{
+    display: inline-block;
+    color: white;
+    background: rgb(117, 165, 255);
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    width: 140px;;
+}
+.trans_btn:hover {
+    outline: none;
+    background-color: rgb(146, 206, 255);
+}
+
+.trans_btn:active {
+    transform: scale(0.98);
+}
+
+.trans_btn-block {
+    display: block;
+    width: 100%;
+}
+  
