@@ -12,11 +12,11 @@ const EditAddress = ({ userId, userProfile, setUserProfile }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const newnewuserprofile = { ...userProfile, Address: newAddress }
+    const newUserProfile = { ...userProfile, Address: newAddress }
     axios
     .put(
       `https://flask-production-7a20.up.railway.app/user/${userId}`,
-      newnewuserprofile
+      newUserProfile
       )
       .then((response) => {
         console.log(response);
@@ -25,17 +25,17 @@ const EditAddress = ({ userId, userProfile, setUserProfile }) => {
         console.error("There was an error!", error);
       });
       
-      setUserProfile(newnewuserprofile);
+      setUserProfile(newUserProfile);
 
     setNewAddress("")
   }
 
   const removeAddressHandler = () => {
-    const newnewuserprofile = { ...userProfile, Address: "" }
+    const newUserProfile = { ...userProfile, Address: "" }
     axios
     .put(
       `https://flask-production-7a20.up.railway.app/user/${userId}`,
-      newnewuserprofile
+      newUserProfile
       )
       .then((response) => {
         console.log(response);
@@ -44,7 +44,7 @@ const EditAddress = ({ userId, userProfile, setUserProfile }) => {
         console.error("There was an error!", error);
       });
       
-      setUserProfile(newnewuserprofile);
+      setUserProfile(newUserProfile);
   }
 
   return (
@@ -52,7 +52,7 @@ const EditAddress = ({ userId, userProfile, setUserProfile }) => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="new-address">New Address: </label>
-          <input className="input" id="new-address" value={newAddress} onChange={addressChangeHandler}/>
+          <input type="text" className="input" id="new-address" value={newAddress} onChange={addressChangeHandler}/>
           <button className="edit-button" type="submit">Change</button>
         </div>
       </form>

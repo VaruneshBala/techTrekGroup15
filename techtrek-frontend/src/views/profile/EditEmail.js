@@ -12,11 +12,11 @@ const EditEmail = ({ userId, userProfile, setUserProfile }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const newnewuserprofile = { ...userProfile, Email: newEmail }
+    const newUserProfile = { ...userProfile, Email: newEmail };
     axios
-    .put(
-      `https://flask-production-7a20.up.railway.app/user/${userId}`,
-      newnewuserprofile
+      .put(
+        `https://flask-production-7a20.up.railway.app/user/${userId}`,
+        newUserProfile
       )
       .then((response) => {
         console.log(response);
@@ -24,17 +24,17 @@ const EditEmail = ({ userId, userProfile, setUserProfile }) => {
       .catch((error) => {
         console.error("There was an error!", error);
       });
-      
-      setUserProfile(newnewuserprofile);
-      setNewEmail("");
-    };
-    
+
+    setUserProfile(newUserProfile);
+    setNewEmail("");
+  };
+
   const removeEmailHandler = () => {
-    const newnewuserprofile = { ...userProfile, Email: "" }
+    const newUserProfile = { ...userProfile, Email: "" };
     axios
-    .put(
-      `https://flask-production-7a20.up.railway.app/user/${userId}`,
-      newnewuserprofile
+      .put(
+        `https://flask-production-7a20.up.railway.app/user/${userId}`,
+        newUserProfile
       )
       .then((response) => {
         console.log(response);
@@ -42,8 +42,8 @@ const EditEmail = ({ userId, userProfile, setUserProfile }) => {
       .catch((error) => {
         console.error("There was an error!", error);
       });
-      
-      setUserProfile(newnewuserprofile);
+
+    setUserProfile(newUserProfile);
   };
 
   return (
@@ -51,7 +51,7 @@ const EditEmail = ({ userId, userProfile, setUserProfile }) => {
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="new-email">New Email:</label>
-          <input
+          <input type="email"
             className="input"
             id="new-email"
             value={newEmail}
