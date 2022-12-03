@@ -1,0 +1,12 @@
+#loginForm {
+  width: "30vw";
+  height: "70vh";
+  background-color: "white";
+  border-radius: "10px";
+  align-content: "center";
+  flex-direction: "column";
+  display: "flex";
+  padding: "2vw";
+}
+
+

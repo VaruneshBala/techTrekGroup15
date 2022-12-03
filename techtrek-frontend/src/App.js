@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar';
+import NavBar from './components/navbar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
-// import Login from './view/login/Login'
+import Login from './views/login/login'
 // import Profile from './view/profile/Profile'
 // import Transactions from './view/transactions/Transactions'
 
@@ -23,10 +23,10 @@ function App() {
               path='/'
               element={<NavBar />} 
             />
-            {/* <Route
+            <Route
               path='/login'
               element={<Login />} 
-            /> */}
+            />
             <Route
               path='/account'
               element={<BankAccount />} 
