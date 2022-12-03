@@ -1,5 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
+
+// pages and components
+// import BankAccounts from './view/bank-accounts/BankAccounts'
+// import Login from './view/login/Login'
+// import Profile from './view/profile/Profile'
+// import Transactions from './view/transactions/Transactions'
 
 function App() {
   return (
