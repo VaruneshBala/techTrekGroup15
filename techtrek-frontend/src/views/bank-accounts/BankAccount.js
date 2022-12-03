@@ -22,25 +22,23 @@ export const BankAccount = () => {
   return (
     <div className="Bank-Account">
         <NavBar />
-        <h1>
-            This is the bank account page.
-        </h1>
-        {
-            <div className="Accounts-Container">
-                <div className="Accounts">
-                    {accountData.map((account) => (
-                        <div>
-                        <Account
-                            UserID = {account.UserID}
-                            AccountType={account.AccountType}
-                            AccountID = {account.AccountID} 
-                            AccountBalance = {account.AccountBalance}
-                        />
-                        </div>
-                    ))}
-                </div>
+        <div className="Accounts-Container"> 
+            <div className="Accounts">
+                <h1>
+                    Account Details
+                </h1>
+                {accountData.map((account) => (
+                    <div>
+                    <Account
+                        UserID = {account.UserID}
+                        AccountType={account.AccountType}
+                        AccountID = {account.AccountID} 
+                        AccountBalance = {account.AccountBalance}
+                    />
+                    </div>
+                ))}
             </div>
-        }
+        </div>
     </div>
   )
 }

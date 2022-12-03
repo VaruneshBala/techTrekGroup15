@@ -51,3 +51,13 @@
     margin: 10px 20px;
 }
 
+.View-Button{
+    margin-left: auto;
+    color: grey;
+    padding-right: 20px;
+}
+
+.View-Button:hover{
+    color: rgb(224, 223, 223);
+}
+
