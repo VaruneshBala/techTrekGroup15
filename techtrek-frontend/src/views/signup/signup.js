@@ -10,17 +10,12 @@ import {
   InputAdornment,
   IconButton,
   Link,
-  Snackbar,
 } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import DBSLogo from "../../assets/DBS-logo.jpg";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { userLogin } from "../../slices/users/usersSlice";
 
 const useStyles = makeStyles((theme) => ({
   loginForm: {
@@ -51,16 +46,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Login() {
+function Signup() {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [displayPassword, setDisplayPassword] = useState(false);
   const [token, setToken] = useState("");
-  const [error, setError] = useState(false);
-  const [open, setOpen] = useState(false);
 
   const handleClickShowPassword = () => {
     setDisplayPassword(!displayPassword);
@@ -71,35 +62,18 @@ function Login() {
 
   const submit = () => {
     console.log(username, password);
-    axios
-      .post(
-        `https://flask-production-7a20.up.railway.app/login?username=${username}&password=${password}`
-      )
-      .then((response) => {
-        console.log(response);
-        if (response.data.token) {
-          sessionStorage.setItem("userid", username);
-          sessionStorage.setItem("jwtToken", response.data.token);
-          dispatch(
-            userLogin({
-              username: username,
-              userId: 1,
-              jwtToken: response.data.token,
-            })
-          );
-          navigate("/account");
-        } else {
-          setError(true);
-        }
-      })
-      .catch((error) => {
-        console.error("There was an error!", error);
-      });
+    const body = { username: username, password: password };
+    // axios
+    //   .post("https://reqres.in/invalid-url", body)
+    //   .then((response) => setToken(response.data))
+    //   .catch((error) => {
+    //     console.error("There was an error!", error);
+    //   });
   };
   return (
-    <Card className={classes.loginForm}>
+    <div className={classes.loginForm}>
       <img src={DBSLogo} width="100px" style={{ margin: "auto" }} />
-      <h3 className={classes.title}>Log In</h3>
+      <h3 className={classes.title}>Sign Up</h3>
       <TextField
         required
         label="Username"
@@ -132,6 +106,7 @@ function Login() {
           ),
         }}
       />
+
       <Button
         className={classes.button}
         variant="contained"
@@ -140,31 +115,13 @@ function Login() {
         disabled={!password.length > 0 || !username.length > 0}
         onClick={submit}
       >
-        Login
+        Sign Up
       </Button>
-      <Link className={classes.link} href="/signup">
-        Create an account
+      <Link className={classes.link} href="/login">
+        Login to an existing account
       </Link>
-      {error && (
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => {
-            setOpen(false);
-          }}
-        >
-          <Alert
-            onClose={() => {
-              setOpen(false);
-            }}
-            severity="error"
-          >
-            Unable to authenticate
-          </Alert>
-        </Snackbar>
-      )}
-    </Card>
+    </div>
   );
 }
 
-export default Login;
+export default Signup;

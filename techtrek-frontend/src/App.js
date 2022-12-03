@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 // pages and components
 // import BankAccounts from './view/bank-accounts/BankAccounts'
 import Login from './views/login/login'
+import Signup from './views/signup/signup';
 // import Profile from './view/profile/Profile'
 // import Transactions from './view/transactions/Transactions'
 
@@ -26,6 +27,10 @@ function App() {
             <Route
               path='/login'
               element={<Login />} 
+            />
+            <Route
+              path='/signup'
+              element={<Signup />} 
             />
             <Route
               path='/account'
