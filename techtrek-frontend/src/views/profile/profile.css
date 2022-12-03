@@ -1,0 +1,32 @@
+.profile {
+  background-color: rgb(223, 238, 255);
+  margin: auto;
+  margin-top: 10vh;
+  width: 100vh;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.name {
+  margin: 10px auto;
+}
+
+.email {
+  margin: 10px auto;
+}
+
+.edit-email {
+  margin: 10px auto;
+}
+
+.address {
+  margin: 10px auto;
+}
+
+.edit-address {
+  margin: 10px auto;
+}
+
+.opt-in {
+  margin: 10px auto;
+}
