@@ -1,13 +1,9 @@
 import './App.css';
 import React from 'react';
-<<<<<<< HEAD
-// import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-=======
 import NavBar from './components/NavBar';
 import { BankAccount } from './views/bank-accounts/BankAccount';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
->>>>>>> feature/NavBar
 // import { useAuthContext } from './hooks/useAuthContext';
 
 // pages and components
